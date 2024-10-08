@@ -10,7 +10,7 @@ const ProfilePage = () => {
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: isDarkMode ? '#000000' : '#ffffff' }]}>
       <ScrollView>
-        <View style={[styles.header, { backgroundColor: isDarkMode ? '#3e544a' : '#3e544a' }]}>
+        <View style={[styles.header]}>
           
           {/* Profile Details */}
           <View style={styles.profileDetails}>
@@ -47,11 +47,11 @@ const ProfilePage = () => {
           </TouchableOpacity>
 
           {/* Dark Mode Toggle */}
-          <TouchableOpacity style={[styles.option, { backgroundColor: isDarkMode ? '#272727' : '#f0f4f5' }]}>
+          <View style={[styles.option, { backgroundColor: isDarkMode ? '#272727' : '#f0f4f5' }]}>
             <MaterialIcons name="brightness-4" size={24} color={isDarkMode ? '#ccc' : '#333'} style={styles.optionIcon} />
             <Text style={[styles.optionText, { color: isDarkMode ? '#ccc' : '#333' }]}>Dark Mode</Text>
             <Switch value={isDarkMode} onValueChange={toggleDarkMode} style={styles.switch} />
-          </TouchableOpacity>
+          </View>
         </View>
 
         {/* Sign Out Button */}
@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
   header: {
     paddingBottom: 20,
     paddingTop: 40,
+    backgroundColor: '#3e544a',
   },
   profileDetails: {
     alignItems: 'center',
